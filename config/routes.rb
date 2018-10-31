@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about' #example of regular routes
 
+  resources :posts #matches http verbs
+
 
 end
