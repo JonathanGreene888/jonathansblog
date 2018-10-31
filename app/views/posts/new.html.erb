@@ -1,7 +1,7 @@
 <h1> Add Post</h1>
 <%= form_for :post, url: posts_path do |f| %>
     <p>
-        <5= f.label :title %> <br>
+        <%= f.label :title %> <br>
         <%= f.text_field :title %>
     </p>
 
