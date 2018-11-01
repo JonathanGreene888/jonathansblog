@@ -1,5 +1,10 @@
 <h1> Add Post</h1>
 <%= form_for :post, url: posts_path do |f| %>
+    <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do  |msg| %>
+        <div class= "alert alter-danger"> <%=msg%> </div>
+        <%end%>
+    <%end%>
     <p>
         <%= f.label :title %> <br>
         <%= f.text_field( :title, {:class => 'form-control'}) %> <%#this is how you add classes to a field%>
@@ -11,6 +16,6 @@
     </p>
     
     <p>
-        <%= f.submit(:class => 'btn, btn-primary') %>
+        <%= f.submit({:class => 'btn, btn-primary'}) %>
     </p>
     <% end %>
